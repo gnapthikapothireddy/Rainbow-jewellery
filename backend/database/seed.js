@@ -448,7 +448,7 @@ const seedDatabase = async () => {
       email: 'admin@rainbow.com',
       password: 'adminpassword123',
       role: 'admin',
-      phone: '+919999999999',
+      phone: '+918919590533',
       loyaltyPoints: 0
     });
     console.log('Admin account seeded: admin@rainbow.com / adminpassword123');

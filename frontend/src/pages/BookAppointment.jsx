@@ -9,7 +9,7 @@ export default function BookAppointment() {
   const [name, setName] = useState(user ? user.name : '');
   const [email, setEmail] = useState(user ? user.email : '');
   const [phone, setPhone] = useState(user ? user.phone || '' : '');
-  const [branch, setBranch] = useState('Jaipur Flagship');
+  const [branch, setBranch] = useState('Cuddapah Flagship');
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
   const [purpose, setPurpose] = useState('Bridal Consultation');
@@ -112,7 +112,7 @@ export default function BookAppointment() {
                 onChange={(e) => setBranch(e.target.value)}
                 className="w-full bg-charcoal border border-gray-700 rounded-xl py-2.5 px-3 text-white focus:outline-none"
               >
-                <option value="Jaipur Flagship">Jaipur (M.I. Road Store)</option>
+                <option value="Cuddapah Flagship">Cuddapah (YV Street Store)</option>
                 <option value="Delhi Connaught">Delhi (Connaught Place)</option>
                 <option value="Mumbai Colaba">Mumbai (Colaba showroom)</option>
               </select>
@@ -195,7 +195,7 @@ export default function BookAppointment() {
             <div className="w-full h-72 rounded-2xl overflow-hidden border border-gray-800 relative">
               <iframe
                 title="Rainbow Jewelry Store locator"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14234.626359570183!2d75.80801837096645!3d26.92055610815124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db3e477f15fff%3A0xc3f14068593eb42!2sM.I.%20Road%2C%20Jaipur%2C%20Rajasthan!5e0!3m2!1sen!2sin!4v1700000000000"
+                src="https://maps.google.com/maps?q=Rainbow%20Jewelry,%20YV%20St,%20Cuddapah,%20Andhra%20Pradesh,%20India&t=&z=15&ie=UTF8&iwloc=&output=embed"
                 className="w-full h-full border-0 grayscale invert opacity-80"
                 allowFullScreen=""
                 loading="lazy"
@@ -204,7 +204,7 @@ export default function BookAppointment() {
             
             <div className="space-y-4 pt-2">
               {[
-                { name: 'Jaipur Flagship Showroom', addr: 'Plot 42, M.I. Road, Jaipur, Rajasthan 302001', tel: '+91 141 236 4820' },
+                { name: 'Cuddapah Flagship Showroom', addr: 'YV St, Cuddapah, Andhra Pradesh, India', tel: '+91 89195 90533' },
                 { name: 'Delhi Connaught Boutique', addr: 'Regal Building, Connaught Place, New Delhi 110001', tel: '+91 11 4350 2000' }
               ].map(store => (
                 <div key={store.name} className="text-xs bg-charcoal p-4 rounded-2xl border border-gray-850 space-y-1">

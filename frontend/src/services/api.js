@@ -182,7 +182,7 @@ const mockData = {
     { id: 1, title: 'Welcome to Rainbow Jewelry', message: 'Discover the finest luxury designs and schedule customized consultations today.', isRead: false, type: 'general', createdAt: new Date().toISOString() }
   ],
   addresses: [
-    { id: 1, addressLine1: '123 Royal Palace Road', city: 'Jaipur', state: 'Rajasthan', postalCode: '302001', country: 'India', isDefault: true }
+    { id: 1, addressLine1: 'YV St', city: 'Cuddapah', state: 'Andhra Pradesh', postalCode: '516001', country: 'India', isDefault: true }
   ]
 };
 

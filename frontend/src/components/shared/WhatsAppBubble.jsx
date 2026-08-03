@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function WhatsAppBubble() {
-  const number = '919999999999';
+  const number = '918919590533';
   const text = encodeURIComponent("Hello Rainbow Jewelry support! I am interested in customizable bridal packages.");
   const url = `https://wa.me/${number}?text=${text}`;
 

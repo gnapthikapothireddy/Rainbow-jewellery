@@ -102,7 +102,7 @@ export default function ContactUs() {
             <div className="w-full h-64 rounded-2xl overflow-hidden border border-gray-800">
               <iframe
                 title="Google Maps Locator frame"
-                src="https://maps.google.com/maps?q=YV%20St,%20YV%20Street,%20Ganagapeta,%20Kadapa,%20Andhra%20Pradesh%20516001&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                src="https://maps.google.com/maps?q=Rainbow%20Jewelry,%20YV%20St,%20Cuddapah,%20Andhra%20Pradesh,%20India&t=&z=15&ie=UTF8&iwloc=&output=embed"
                 className="w-full h-full border-0 grayscale invert opacity-70"
                 allowFullScreen=""
                 loading="lazy"
@@ -116,17 +116,13 @@ export default function ContactUs() {
                   <div>
                     <h4 className="font-bold text-white uppercase text-[10px] tracking-wider mb-1">📍 Rainbow Jewelry</h4>
                     <p className="text-gray-400 mt-0.5 leading-relaxed font-semibold">
-                      YV St,<br/>
-                      YV Street,<br/>
-                      Ganagapeta,<br/>
-                      Kadapa,<br/>
-                      Andhra Pradesh – 516001
+                      YV St, Cuddapah, Andhra Pradesh, India
                     </p>
                   </div>
                 </div>
                 
                 <a
-                  href="https://www.google.com/maps/search/?api=1&query=YV+St,+YV+Street,+Ganagapeta,+Kadapa,+Andhra+Pradesh+516001"
+                  href="https://www.google.com/maps/search/?api=1&query=YV+St,+Cuddapah,+Andhra+Pradesh,+India"
                   target="_blank"
                   rel="noreferrer"
                   className="w-full inline-block text-center gold-gradient-bg text-charcoal-dark font-semibold py-2.5 rounded-xl hover:scale-102 transition-transform text-xs shadow-gold-glow cursor-pointer mt-1"
@@ -139,8 +135,7 @@ export default function ContactUs() {
                 <Phone className="text-gold mt-0.5" size={16} />
                 <div>
                   <h4 className="font-bold text-white uppercase text-[10px]">Tele-Assistance Support</h4>
-                  <p className="text-gray-400 mt-0.5">+91 141 236 4820</p>
-                  <p className="text-gray-400">+91 99999 99999</p>
+                  <p className="text-gray-400 mt-0.5">+91 89195 90533</p>
                 </div>
               </div>
 

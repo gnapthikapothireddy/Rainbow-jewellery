@@ -125,7 +125,7 @@ const createOrder = async (req, res) => {
       }
     }
     if (!finalAddressText) {
-      finalAddressText = 'Jaipur Store Pickup';
+      finalAddressText = 'Cuddapah Store Pickup';
     }
 
     // Generate unique order ID (ORD-XXXXXX)

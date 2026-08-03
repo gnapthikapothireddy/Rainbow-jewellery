@@ -74,7 +74,7 @@ export default function Footer() {
             <div className="space-y-2 text-xs pt-2">
               <div className="flex items-center gap-2">
                 <Phone size={14} className="text-gold" />
-                <span>+91 99999 99999 (Support)</span>
+                <span>+91 89195 90533 (Support)</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail size={14} className="text-gold" />
@@ -82,7 +82,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2">
                 <MapPin size={14} className="text-gold" />
-                <span>Jaipur, Rajasthan, India</span>
+                <span>YV St, Cuddapah, Andhra Pradesh, India</span>
               </div>
             </div>
 
@@ -93,7 +93,7 @@ export default function Footer() {
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center text-xs">
           <p>&copy; {new Date().getFullYear()} Rainbow Jewelry. All Rights Reserved.</p>
           <div className="flex space-x-6 mt-4 sm:mt-0">
-            <a href="https://wa.me/919999999999" target="_blank" rel="noreferrer" className="text-green-500 hover:underline">WhatsApp Support</a>
+            <a href="https://wa.me/918919590533" target="_blank" rel="noreferrer" className="text-green-500 hover:underline">WhatsApp Support</a>
             <Link to="/contact" className="hover:text-gold transition-colors">Store Locator</Link>
           </div>
         </div>
