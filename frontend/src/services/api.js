@@ -1,5 +1,46 @@
 // Frontend API communication layer with transparent client-side mock fallback
-const BASE_URL = 'http://localhost:5000/api';
+const getBaseUrl = () => {
+  if (import.meta.env && import.meta.env.VITE_API_URL) {
+    return import.meta.env.VITE_API_URL;
+  }
+  if (typeof window !== 'undefined' && window.location) {
+    const protocol = window.location.protocol;
+    const hostname = window.location.hostname;
+    return `${protocol}//${hostname}:5000/api`;
+  }
+  return 'http://localhost:5000/api';
+};
+
+const BASE_URL = getBaseUrl();
+const BACKEND_URL = BASE_URL.replace('/api', '');
+
+const formatImageUrl = (url) => {
+  if (!url) return '';
+  if (url.startsWith('http') || url.startsWith('data:')) return url;
+  if (url.startsWith('/uploads')) return `${BACKEND_URL}${url}`;
+  return url;
+};
+
+const formatProduct = (p) => {
+  if (!p) return p;
+  const formatted = { ...p };
+  if (formatted.images && Array.isArray(formatted.images)) {
+    formatted.images = formatted.images.map(formatImageUrl);
+  }
+  if (formatted.image) {
+    formatted.image = formatImageUrl(formatted.image);
+  }
+  return formatted;
+};
+
+const formatCategory = (c) => {
+  if (!c) return c;
+  const formatted = { ...c };
+  if (formatted.image) {
+    formatted.image = formatImageUrl(formatted.image);
+  }
+  return formatted;
+};
 
 const getHeaders = () => {
   const token = localStorage.getItem('rainbow_token');
@@ -15,13 +56,13 @@ const getHeaders = () => {
 // Client-side mock fallback database store
 const mockData = {
   categories: [
-    { id: 1, name: 'Bangles', slug: 'bangles', image: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&q=80&w=400' },
+    { id: 1, name: 'Bangles', slug: 'bangles', image: '/assets/royal-red-bangles.jpg' },
     { id: 2, name: 'Gold Plated Bangles', slug: 'gold-plated-bangles', image: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&q=80&w=400' },
-    { id: 3, name: 'Necklaces', slug: 'necklaces', image: 'https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&q=80&w=400' },
-    { id: 4, name: 'Long Chains', slug: 'long-chains', image: 'https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&q=80&w=400' },
+    { id: 3, name: 'Necklaces', slug: 'necklaces', image: '/assets/royal-ruby-necklace.jpg' },
+    { id: 4, name: 'Long Chains', slug: 'long-chains', image: '/assets/emerald-layered-necklace.jpg' },
     { id: 5, name: 'Pearl Chains', slug: 'pearl-chains', image: 'https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&q=80&w=400' },
     { id: 6, name: 'Black Bead Chains', slug: 'black-bead-chains', image: 'https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&q=80&w=400' },
-    { id: 7, name: 'Chokers', slug: 'chokers', image: 'https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&q=80&w=400' },
+    { id: 7, name: 'Chokers', slug: 'chokers', image: '/assets/royal-green-necklace.jpg' },
     { id: 8, name: 'Rings', slug: 'rings', image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&q=80&w=400' },
     { id: 9, name: 'Earrings', slug: 'earrings', image: 'https://images.unsplash.com/photo-1635767798638-3e25273a8236?auto=format&fit=crop&q=80&w=400' },
     { id: 10, name: 'Ear Side Chains', slug: 'ear-side-chains', image: 'https://images.unsplash.com/photo-1635767798638-3e25273a8236?auto=format&fit=crop&q=80&w=400' },
@@ -212,6 +253,24 @@ const handleFetch = async (endpoint, options = {}) => {
     });
     const json = await res.json();
     if (!res.ok) throw new Error(json.message || 'API request failed');
+    
+    // Auto format image URLs dynamically
+    if (json.success && json.data) {
+      if (Array.isArray(json.data)) {
+        json.data = json.data.map(item => {
+          if (item && item.images) return formatProduct(item);
+          if (item && item.slug) return formatCategory(item);
+          return item;
+        });
+      } else if (json.data.products && Array.isArray(json.data.products)) {
+        json.data.products = json.data.products.map(formatProduct);
+      } else if (json.data.images) {
+        json.data = formatProduct(json.data);
+      } else if (json.data.slug) {
+        json.data = formatCategory(json.data);
+      }
+    }
+    
     return json;
   } catch (error) {
     console.warn(`API unavailable, running fallback for ${endpoint}:`, error.message);

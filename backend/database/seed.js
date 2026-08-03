@@ -6,13 +6,13 @@ const Coupon = require('../models/Coupon');
 const Review = require('../models/Review');
 
 const categoriesData = [
-  { name: 'Bangles', slug: 'bangles', image: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&q=80&w=400' },
+  { name: 'Bangles', slug: 'bangles', image: '/assets/royal-red-bangles.jpg' },
   { name: 'Gold Plated Bangles', slug: 'gold-plated-bangles', image: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&q=80&w=400' },
-  { name: 'Necklaces', slug: 'necklaces', image: 'https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&q=80&w=400' },
-  { name: 'Long Chains', slug: 'long-chains', image: 'https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&q=80&w=400' },
+  { name: 'Necklaces', slug: 'necklaces', image: '/assets/royal-ruby-necklace.jpg' },
+  { name: 'Long Chains', slug: 'long-chains', image: '/assets/emerald-layered-necklace.jpg' },
   { name: 'Pearl Chains', slug: 'pearl-chains', image: 'https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&q=80&w=400' },
   { name: 'Black Bead Chains', slug: 'black-bead-chains', image: 'https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&q=80&w=400' },
-  { name: 'Chokers', slug: 'chokers', image: 'https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&q=80&w=400' },
+  { name: 'Chokers', slug: 'chokers', image: '/assets/royal-green-necklace.jpg' },
   { name: 'Rings', slug: 'rings', image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&q=80&w=400' },
   { name: 'Earrings', slug: 'earrings', image: 'https://images.unsplash.com/photo-1635767798638-3e25273a8236?auto=format&fit=crop&q=80&w=400' },
   { name: 'Ear Side Chains', slug: 'ear-side-chains', image: 'https://images.unsplash.com/photo-1635767798638-3e25273a8236?auto=format&fit=crop&q=80&w=400' },
