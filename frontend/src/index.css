@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-charcoal-dark text-gray-100 font-inter selection:bg-gold selection:text-charcoal-dark;
+  }
+}
+
+/* Custom Scrollbar for Luxury Aesthetics */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0f0f0f;
+}
+::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #AA7C11;
+}
+
+/* Glassmorphism Class Details */
+.glass-card {
+  background: rgba(28, 28, 28, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.glass-nav {
+  background: rgba(15, 15, 15, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+}
+
+/* Gold Gradient Accents */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 50%, #AA7C11 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #D4AF37 0%, #AA7C11 100%);
+}
+
+.gold-gradient-hover:hover {
+  background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 100%);
+}
+
+/* Micro Animations and Glows */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.5);
+  }
+}
+
+.pulse-glow-hover:hover {
+  animation: pulseGlow 2s infinite;
+}
+
+/* Zoom Image magnifier hover */
+.zoom-container {
+  overflow: hidden;
+  position: relative;
+}
+.zoom-image {
+  transition: transform 0.5s ease;
+}
+.zoom-container:hover .zoom-image {
+  transform: scale(1.4);
+}
