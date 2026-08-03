@@ -54,6 +54,7 @@ export default function Shop() {
   const [maxPrice, setMaxPrice] = useState('');
   const [sortBy, setSortBy] = useState('newest');
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   // Load URL queries initially
   useEffect(() => {
@@ -86,6 +87,7 @@ export default function Shop() {
   useEffect(() => {
     const fetchShopProducts = async () => {
       setLoading(true);
+      setError(null);
       try {
         let query = `?sort=${sortBy}`;
         if (search) query += `&search=${encodeURIComponent(search)}`;
@@ -97,9 +99,12 @@ export default function Shop() {
         const res = await api.getProducts(query);
         if (res.success) {
           setProducts(res.data.products);
+        } else {
+          setError(res.message || 'Failed to load catalog');
         }
       } catch (err) {
         console.error(err);
+        setError(err.message || 'API connection failed');
       } finally {
         setLoading(false);
       }
@@ -174,7 +179,7 @@ export default function Shop() {
               className="w-full bg-charcoal-dark border border-gray-800 rounded-xl py-2 px-3 text-xs text-white focus:outline-none focus:border-gold"
             >
               <option value="">All Collections</option>
-              {categories.map(c => (
+              {categories && Array.isArray(categories) && categories.map(c => (
                 <option key={c.id} value={c.slug}>{c.name}</option>
               ))}
             </select>
@@ -229,10 +234,20 @@ export default function Shop() {
 
           {/* Products listings */}
           {loading ? (
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 animate-pulse">
-              {[1, 2, 3].map(i => (
-                <div key={i} className="h-96 bg-charcoal rounded-2xl border border-gray-800"></div>
-              ))}
+            <div className="flex flex-col items-center justify-center py-20 space-y-4">
+              <div className="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-gold"></div>
+              <p className="text-xs text-gray-400 uppercase tracking-widest font-semibold animate-pulse">Loading Catalog...</p>
+            </div>
+          ) : error ? (
+            <div className="glass-card rounded-2xl p-8 border border-red-500/20 text-center space-y-3">
+              <p className="text-sm font-semibold text-red-400">Connection Error</p>
+              <p className="text-xs text-gray-450 max-w-md mx-auto leading-relaxed">{error}</p>
+              <button 
+                onClick={() => resetFilters()} 
+                className="gold-gradient-bg text-charcoal-dark font-bold text-xs py-2 px-6 rounded-xl hover:scale-102 transition-transform cursor-pointer mt-2"
+              >
+                Retry Connection
+              </button>
             </div>
           ) : (() => {
             const displayCards = [...products];

@@ -6,7 +6,23 @@ const getBaseUrl = () => {
   if (typeof window !== 'undefined' && window.location) {
     const protocol = window.location.protocol;
     const hostname = window.location.hostname;
-    return `${protocol}//${hostname}:5000/api`;
+    
+    // Serve from port 5000 in local dev environment
+    if (hostname === 'localhost' || hostname === '127.0.0.1' || hostname.startsWith('192.168.') || hostname.startsWith('10.')) {
+      return `${protocol}//${hostname}:5000/api`;
+    }
+    
+    // Construction of production backend URL dynamically for Vercel services
+    if (hostname.includes('.vercel.app')) {
+      if (hostname.includes('-frontend')) {
+        return `${protocol}//${hostname.replace('-frontend', '-backend')}/api`;
+      }
+      const parts = hostname.split('.');
+      parts[0] = `${parts[0]}-backend`;
+      return `${protocol}//${parts.join('.')}/api`;
+    }
+    
+    return `${protocol}//${hostname}/api`;
   }
   return 'http://localhost:5000/api';
 };
@@ -86,8 +102,7 @@ const mockData = {
       gst: 3.00,
       stock: 8,
       images: [
-        'https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&q=80&w=800',
-        'https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?auto=format&fit=crop&q=80&w=800'
+        '/assets/royal-ruby-necklace.jpg'
       ],
       videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4',
       isFeatured: true,
@@ -110,8 +125,7 @@ const mockData = {
       gst: 3.00,
       stock: 4,
       images: [
-        'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&q=80&w=800',
-        'https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&q=80&w=800'
+        '/assets/royal-green-necklace.jpg'
       ],
       videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4',
       isFeatured: true,
@@ -134,7 +148,7 @@ const mockData = {
       gst: 3.00,
       stock: 25,
       images: [
-        'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&q=80&w=800'
+        '/assets/silver-bangles.jpg'
       ],
       videoUrl: '',
       isFeatured: false,
@@ -157,7 +171,7 @@ const mockData = {
       gst: 3.00,
       stock: 0,
       images: [
-        'https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&q=80&w=800'
+        '/assets/royal-red-bangles.jpg'
       ],
       videoUrl: '',
       isFeatured: false,
@@ -180,7 +194,7 @@ const mockData = {
       gst: 3.00,
       stock: 3,
       images: [
-        'https://images.unsplash.com/photo-1635767798638-3e25273a8236?auto=format&fit=crop&q=80&w=800'
+        '/assets/royal-green-long-necklace.jpg'
       ],
       videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4',
       isFeatured: true,
@@ -203,7 +217,7 @@ const mockData = {
       gst: 3.00,
       stock: 6,
       images: [
-        'https://images.unsplash.com/photo-1618403088890-3d9ff6f4c8be?auto=format&fit=crop&q=80&w=800'
+        '/assets/emerald-layered-necklace.jpg'
       ],
       videoUrl: '',
       isFeatured: true,
@@ -231,11 +245,23 @@ const mockData = {
 const initMockDB = () => {
   if (!localStorage.getItem('mock_products')) {
     localStorage.setItem('mock_products', JSON.stringify(mockData.products));
+  }
+  if (!localStorage.getItem('mock_categories')) {
     localStorage.setItem('mock_categories', JSON.stringify(mockData.categories));
+  }
+  if (!localStorage.getItem('mock_orders')) {
     localStorage.setItem('mock_orders', JSON.stringify(mockData.orders));
+  }
+  if (!localStorage.getItem('mock_appointments')) {
     localStorage.setItem('mock_appointments', JSON.stringify(mockData.appointments));
+  }
+  if (!localStorage.getItem('mock_notifications')) {
     localStorage.setItem('mock_notifications', JSON.stringify(mockData.notifications));
+  }
+  if (!localStorage.getItem('mock_addresses')) {
     localStorage.setItem('mock_addresses', JSON.stringify(mockData.addresses));
+  }
+  if (!localStorage.getItem('mock_coupons')) {
     localStorage.setItem('mock_coupons', JSON.stringify(mockData.coupons));
   }
 };
