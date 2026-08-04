@@ -73,157 +73,387 @@ const getHeaders = () => {
 const mockData = {
   categories: [
     { id: 1, name: 'Bangles', slug: 'bangles', image: '/assets/royal-red-bangles.jpg' },
-    { id: 2, name: 'Gold Plated Bangles', slug: 'gold-plated-bangles', image: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&q=80&w=400' },
+    { id: 2, name: 'Gold Plated Bangles', slug: 'gold-plated-bangles', image: '/assets/silver-bangles.jpg' },
     { id: 3, name: 'Necklaces', slug: 'necklaces', image: '/assets/royal-ruby-necklace.jpg' },
     { id: 4, name: 'Long Chains', slug: 'long-chains', image: '/assets/emerald-layered-necklace.jpg' },
-    { id: 5, name: 'Pearl Chains', slug: 'pearl-chains', image: 'https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&q=80&w=400' },
-    { id: 6, name: 'Black Bead Chains', slug: 'black-bead-chains', image: 'https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&q=80&w=400' },
+    { id: 5, name: 'Pearl Chains', slug: 'pearl-chains', image: '/assets/classic-pearl-necklace.jpg' },
+    { id: 6, name: 'Black Bead Chains', slug: 'black-bead-chains', image: '/assets/royal-green-long-necklace.jpg' },
     { id: 7, name: 'Chokers', slug: 'chokers', image: '/assets/royal-green-necklace.jpg' },
-    { id: 8, name: 'Rings', slug: 'rings', image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&q=80&w=400' },
-    { id: 9, name: 'Earrings', slug: 'earrings', image: 'https://images.unsplash.com/photo-1635767798638-3e25273a8236?auto=format&fit=crop&q=80&w=400' },
-    { id: 10, name: 'Ear Side Chains', slug: 'ear-side-chains', image: 'https://images.unsplash.com/photo-1635767798638-3e25273a8236?auto=format&fit=crop&q=80&w=400' },
-    { id: 11, name: 'Pendants', slug: 'pendants', image: 'https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&q=80&w=400' },
-    { id: 12, name: 'Hair Ornaments', slug: 'hair-ornaments', image: 'https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&q=80&w=400' },
-    { id: 13, name: 'Bracelets', slug: 'bracelets', image: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&q=80&w=400' }
+    { id: 8, name: 'Rings', slug: 'rings', image: '/assets/royal-red-bangles.jpg' },
+    { id: 9, name: 'Earrings', slug: 'earrings', image: '/assets/royal-ruby-necklace.jpg' },
+    { id: 10, name: 'Ear Side Chains', slug: 'ear-side-chains', image: '/assets/royal-ruby-necklace.jpg' },
+    { id: 11, name: 'Pendants', slug: 'pendants', image: '/assets/royal-green-necklace.jpg' },
+    { id: 12, name: 'Hair Ornaments', slug: 'hair-ornaments', image: '/assets/emerald-layered-necklace.jpg' },
+    { id: 13, name: 'Bracelets', slug: 'bracelets', image: '/assets/silver-bangles.jpg' }
   ],
   products: [
     {
       id: 1,
-      name: 'Majestic Royal Gold Necklace',
-      sku: 'NK-AU-001',
-      categoryId: 3,
-      description: 'Exquisite 22K gold necklace with intricate floral motifs and filigree work, perfect for bridal wear and grand festivals.',
-      price: 125000.00,
-      discount: 5.00,
-      weight: 24.500,
-      purity: '22K Gold (916)',
+      name: 'Elegant Silver Designer Bangles',
+      sku: 'BG-SV-007',
+      categoryId: 1,
+      description: 'Enhance your style with these Elegant Silver Designer Bangles featuring a beautiful lattice floral design. Made with a premium silver finish, these bangles are lightweight, durable, and comfortable for all-day wear. Their elegant craftsmanship makes them suitable for casual wear, festivals, weddings, parties, and special occasions. A perfect combination of traditional beauty and modern elegance.',
+      price: 150.00,
+      discount: 0.00,
+      weight: 18.000,
+      purity: 'Premium Silver Finish',
       stoneDetails: 'None',
-      makingCharges: 8500.00,
-      gst: 3.00,
-      stock: 8,
-      images: [
-        '/assets/royal-ruby-necklace.jpg'
-      ],
-      videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4',
+      makingCharges: 0.00,
+      gst: 0.00,
+      stock: 50,
+      images: ['/assets/silver-bangles.jpg'],
+      videoUrl: '',
       isFeatured: true,
       isNewArrival: true,
       isBestSeller: true,
-      isTrending: true
+      isTrending: true,
+      collection: 'Silver Bangles',
+      rating: 4.9
     },
     {
       id: 2,
-      name: 'Solitaire Promise Diamond Ring',
-      sku: 'RG-DM-002',
-      categoryId: 8,
-      description: 'A breathtaking 18K white gold ring featuring a certified 1.5-carat round brilliant cut diamond of VVS1 clarity and E color.',
-      price: 185000.00,
-      discount: 10.00,
-      weight: 4.200,
-      purity: '18K White Gold',
-      stoneDetails: '1.5 Carat Solitaire Diamond, VVS1 Clarity, E Color',
-      makingCharges: 12000.00,
-      gst: 3.00,
-      stock: 4,
-      images: [
-        '/assets/royal-green-necklace.jpg'
-      ],
-      videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4',
+      name: 'Royal Red Bridal Bangle Set',
+      sku: 'BG-SV-008',
+      categoryId: 1,
+      description: 'Enhance your bridal look with this stunning Royal Red Bridal Bangle Set. Featuring elegant red, gold, and crystal detailing, this beautifully crafted set is perfect for weddings, festive occasions, and traditional celebrations. Designed with premium-quality materials, these bangles provide both comfort and timeless elegance.',
+      price: 1010.00,
+      discount: 0.00,
+      weight: 22.000,
+      purity: 'Premium Quality Materials',
+      stoneDetails: 'Gold & Crystal Detailing',
+      makingCharges: 0.00,
+      gst: 0.00,
+      stock: 25,
+      images: ['/assets/royal-red-bangles.jpg'],
+      videoUrl: '',
       isFeatured: true,
-      isNewArrival: false,
+      isNewArrival: true,
       isBestSeller: true,
-      isTrending: true
+      isTrending: true,
+      collection: 'Bangles',
+      rating: 4.9
     },
     {
       id: 3,
-      name: 'Elegant Sterling Silver Bracelet',
-      sku: 'BR-AG-003',
-      categoryId: 13,
-      description: 'Finely crafted 925 sterling silver chain bracelet with a high-polish rhodium finish to prevent tarnishing.',
-      price: 4500.00,
+      name: 'Emerald Green Bridal Bangle Set',
+      sku: 'BG-SV-009',
+      categoryId: 1,
+      description: 'Celebrate every special occasion with this elegant Emerald Green Bridal Bangle Set. Adorned with sparkling stones, pearl accents, and hanging jhumka charms, this luxurious set beautifully complements bridal and festive attire while adding a royal touch to your look.',
+      price: 1350.00,
       discount: 0.00,
-      weight: 12.800,
-      purity: '925 Sterling Silver',
-      stoneDetails: 'None',
-      makingCharges: 400.00,
-      gst: 3.00,
-      stock: 25,
-      images: [
-        '/assets/silver-bangles.jpg'
-      ],
+      weight: 28.000,
+      purity: 'Premium Quality Materials',
+      stoneDetails: 'Sparkling Stones & Pearl Accents',
+      makingCharges: 0.00,
+      gst: 0.00,
+      stock: 30,
+      images: ['/assets/emerald-green-bangles.jpg'],
       videoUrl: '',
-      isFeatured: false,
-      isNewArrival: true,
-      isBestSeller: false,
-      isTrending: false
-    },
-    {
-      id: 4,
-      name: 'Eternal Platinum Wedding Band',
-      sku: 'RG-PT-004',
-      categoryId: 8,
-      description: 'A classic, minimalist wedding band made from pure 950 platinum with a sleek comfort-fit design.',
-      price: 42000.00,
-      discount: 8.00,
-      weight: 6.500,
-      purity: '950 Platinum',
-      stoneDetails: 'None',
-      makingCharges: 3500.00,
-      gst: 3.00,
-      stock: 0,
-      images: [
-        '/assets/royal-red-bangles.jpg'
-      ],
-      videoUrl: '',
-      isFeatured: false,
-      isNewArrival: false,
-      isBestSeller: false,
-      isTrending: true
-    },
-    {
-      id: 5,
-      name: 'Jhumka Diamond Drop Earrings',
-      sku: 'ER-DM-005',
-      categoryId: 9,
-      description: 'Bridal special traditional diamond Jhumkas crafted in 18K yellow gold, decorated with pavé diamonds and South Sea pearls.',
-      price: 95000.00,
-      discount: 12.00,
-      weight: 14.200,
-      purity: '18K Yellow Gold',
-      stoneDetails: '2.4 Carat Diamond Accents, VVS Clarity',
-      makingCharges: 7500.00,
-      gst: 3.00,
-      stock: 3,
-      images: [
-        '/assets/royal-green-long-necklace.jpg'
-      ],
-      videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4',
       isFeatured: true,
       isNewArrival: true,
       isBestSeller: true,
-      isTrending: false
+      isTrending: true,
+      collection: 'Bangles',
+      rating: 4.9
+    },
+    {
+      id: 4,
+      name: 'Royal Black Designer Bangle Set',
+      sku: 'BG-SV-010',
+      categoryId: 1,
+      description: 'Make a bold fashion statement with the Royal Black Designer Bangle Set. Featuring an elegant combination of black beads, intricate gold detailing, and pearl jhumka charms, this premium set is ideal for weddings, parties, festive occasions, and ethnic wear.',
+      price: 940.00,
+      discount: 0.00,
+      weight: 26.000,
+      purity: 'Premium Quality Materials',
+      stoneDetails: 'Black Beads & Pearl Jhumkas',
+      makingCharges: 0.00,
+      gst: 0.00,
+      stock: 20,
+      images: ['/assets/royal-black-bangles.jpg'],
+      videoUrl: '',
+      isFeatured: true,
+      isNewArrival: true,
+      isBestSeller: true,
+      isTrending: true,
+      collection: 'Bangles',
+      rating: 4.8
+    },
+    {
+      id: 5,
+      name: 'Elegant Pink Bridal Bangle Set',
+      sku: 'BG-SV-011',
+      categoryId: 1,
+      description: 'Bring elegance to your jewelry collection with this Elegant Pink Bridal Bangle Set. Crafted with sparkling stones and beautifully arranged pink bangles, this premium set is perfect for bridal wear, festivals, engagement ceremonies, and special celebrations.',
+      price: 1370.00,
+      discount: 0.00,
+      weight: 24.000,
+      purity: 'Premium Quality Materials',
+      stoneDetails: 'Sparkling Stones',
+      makingCharges: 0.00,
+      gst: 0.00,
+      stock: 15,
+      images: ['/assets/elegant-pink-bangles.jpg'],
+      videoUrl: '',
+      isFeatured: true,
+      isNewArrival: true,
+      isBestSeller: true,
+      isTrending: true,
+      collection: 'Bangles',
+      rating: 4.9
     },
     {
       id: 6,
-      name: "Classic Men's Kada",
-      sku: 'KD-AU-006',
+      name: 'Crystal Green Glass Bangle Set',
+      sku: 'BG-SV-012',
       categoryId: 1,
-      description: 'A bold and heavy designer kada bracelet for men, crafted in 22K yellow gold with satin and mirror finish.',
-      price: 155000.00,
-      discount: 5.00,
-      weight: 32.000,
-      purity: '22K Gold',
-      stoneDetails: 'None',
-      makingCharges: 9800.00,
-      gst: 3.00,
-      stock: 6,
-      images: [
-        '/assets/emerald-layered-necklace.jpg'
-      ],
+      description: 'Add a graceful touch to your outfit with the Crystal Green Glass Bangle Set. Designed with premium glass bangles and sparkling crystal-studded borders, this lightweight and stylish set is perfect for daily wear, traditional functions, festive occasions, and gifting.',
+      price: 350.00,
+      discount: 0.00,
+      weight: 15.000,
+      purity: 'Premium Quality Glass',
+      stoneDetails: 'Crystal borders',
+      makingCharges: 0.00,
+      gst: 0.00,
+      stock: 40,
+      images: ['/assets/crystal-green-bangles.jpg'],
       videoUrl: '',
       isFeatured: true,
-      isNewArrival: false,
-      isBestSeller: false,
-      isTrending: true
+      isNewArrival: true,
+      isBestSeller: true,
+      isTrending: true,
+      collection: 'Bangles',
+      rating: 4.8
+    },
+    {
+      id: 7,
+      name: 'Royal Green Bridal Necklace Set',
+      sku: 'NC-SV-001',
+      categoryId: 7,
+      description: 'Make every celebration unforgettable with this Royal Green Bridal Necklace Set. Featuring intricate antique gold craftsmanship, elegant green bead drops, sparkling stones, and matching jhumka earrings, this luxurious set is perfect for weddings, receptions, festivals, and traditional occasions. Designed to add a royal touch to every outfit.',
+      price: 4450.00,
+      discount: 0.00,
+      weight: 45.000,
+      purity: 'Antique Gold Craftsmanship',
+      stoneDetails: 'Green Bead Drops & Sparkling Stones',
+      makingCharges: 0.00,
+      gst: 3.00,
+      stock: 10,
+      images: ['/assets/royal-green-necklace.jpg'],
+      videoUrl: '',
+      isFeatured: true,
+      isNewArrival: true,
+      isBestSeller: true,
+      isTrending: true,
+      collection: 'Chokers',
+      rating: 4.9
+    },
+    {
+      id: 8,
+      name: 'Elegant Pink Stone Necklace Set',
+      sku: 'NC-SV-002',
+      categoryId: 7,
+      description: 'Enhance your jewelry collection with this Elegant Pink Stone Necklace Set. Crafted with premium-quality stones and intricate floral detailing, this beautiful set includes a stylish necklace and matching earrings. Its timeless design makes it ideal for weddings, engagements, parties, festive celebrations, and special occasions.',
+      price: 2980.00,
+      discount: 0.00,
+      weight: 38.000,
+      purity: 'Premium Quality Stones',
+      stoneDetails: 'Intricate Floral Detailing',
+      makingCharges: 0.00,
+      gst: 3.00,
+      stock: 12,
+      images: ['/assets/elegant-pink-necklace.jpg'],
+      videoUrl: '',
+      isFeatured: true,
+      isNewArrival: true,
+      isBestSeller: true,
+      isTrending: true,
+      collection: 'Chokers',
+      rating: 4.8
+    },
+    {
+      id: 9,
+      name: 'Sapphire Blue Crystal Necklace Set',
+      sku: 'NC-SV-003',
+      categoryId: 7,
+      description: 'Shine with elegance in this Sapphire Blue Crystal Necklace Set. Featuring dazzling blue crystal stones, sparkling floral motifs, and matching designer earrings, this premium jewelry set is perfect for receptions, evening parties, weddings, and festive occasions. Its sophisticated design beautifully complements both traditional and modern outfits.',
+      price: 3990.00,
+      discount: 0.00,
+      weight: 42.000,
+      purity: 'Dazzling Blue Crystal Stones',
+      stoneDetails: 'Sparkling Floral Motifs',
+      makingCharges: 0.00,
+      gst: 3.00,
+      stock: 8,
+      images: ['/assets/sapphire-blue-necklace.jpg'],
+      videoUrl: '',
+      isFeatured: true,
+      isNewArrival: true,
+      isBestSeller: true,
+      isTrending: true,
+      collection: 'Chokers',
+      rating: 4.9
+    },
+    {
+      id: 10,
+      name: 'Royal Ruby Stone Necklace Set',
+      sku: 'NC-SV-004',
+      categoryId: 3,
+      description: 'Add timeless elegance to your jewelry collection with this Royal Ruby Stone Necklace Set. Designed with sparkling white stones and beautiful ruby-red teardrop accents, this premium set includes a matching necklace and elegant drop earrings. Perfect for weddings, receptions, festive celebrations, engagements, and special occasions, it beautifully complements both traditional and party wear.',
+      price: 2480.00,
+      discount: 0.00,
+      weight: 32.000,
+      purity: 'Premium Quality Stones',
+      stoneDetails: 'Sparkling White Stones & Ruby Red Accents',
+      makingCharges: 0.00,
+      gst: 3.00,
+      stock: 15,
+      images: ['/assets/royal-ruby-necklace.jpg'],
+      videoUrl: '',
+      isFeatured: true,
+      isNewArrival: true,
+      isBestSeller: true,
+      isTrending: true,
+      collection: 'Necklaces',
+      rating: 4.9
+    },
+    {
+      id: 11,
+      name: 'Crystal White Designer Necklace Set',
+      sku: 'NC-SV-005',
+      categoryId: 3,
+      description: 'Enhance your look with this Crystal White Designer Necklace Set, featuring dazzling crystal stones arranged in an elegant floral pattern. The matching designer earrings complete the sophisticated look, making it an excellent choice for weddings, parties, receptions, festivals, and evening events. Lightweight, stylish, and crafted for lasting brilliance, this set adds grace to every occasion.',
+      price: 1750.00,
+      discount: 0.00,
+      weight: 28.000,
+      purity: 'Dazzling Crystal Stones',
+      stoneDetails: 'Floral Pattern Crystals',
+      makingCharges: 0.00,
+      gst: 3.00,
+      stock: 20,
+      images: ['/assets/crystal-white-necklace.jpg'],
+      videoUrl: '',
+      isFeatured: true,
+      isNewArrival: true,
+      isBestSeller: true,
+      isTrending: true,
+      collection: 'Necklaces',
+      rating: 4.8
+    },
+    {
+      id: 12,
+      name: 'Royal Green Temple Long Necklace Set',
+      sku: 'LC-SV-001',
+      categoryId: 4,
+      description: 'Enhance your traditional look with this Royal Green Temple Long Necklace Set. Featuring intricate antique gold craftsmanship, elegant green bead accents, and matching designer earrings, this premium set is perfect for weddings, festive occasions, cultural celebrations, and bridal wear. Its timeless design adds elegance and grace to every outfit.',
+      price: 2450.00,
+      discount: 0.00,
+      weight: 60.000,
+      purity: 'Antique Gold Craftsmanship',
+      stoneDetails: 'Green Bead Accents & Sparkling Stones',
+      makingCharges: 0.00,
+      gst: 3.00,
+      stock: 8,
+      images: ['/assets/royal-green-long-necklace.jpg'],
+      videoUrl: '',
+      isFeatured: true,
+      isNewArrival: true,
+      isBestSeller: true,
+      isTrending: true,
+      collection: 'Long Chains',
+      rating: 4.9
+    },
+    {
+      id: 13,
+      name: 'Emerald Floral Layered Necklace Set',
+      sku: 'LC-SV-002',
+      categoryId: 4,
+      description: 'Make a grand statement with this Emerald Floral Layered Necklace Set. Designed with beautiful floral motifs, sparkling green stones, and elegant layered chains, this luxurious jewelry set includes matching earrings and is ideal for weddings, receptions, festive celebrations, and special occasions.',
+      price: 4960.00,
+      discount: 0.00,
+      weight: 75.000,
+      purity: 'Premium Gold Craftsmanship',
+      stoneDetails: 'Sparkling Green Stones & Floral Motifs',
+      makingCharges: 0.00,
+      gst: 3.00,
+      stock: 5,
+      images: ['/assets/emerald-layered-necklace.jpg'],
+      videoUrl: '',
+      isFeatured: true,
+      isNewArrival: true,
+      isBestSeller: true,
+      isTrending: true,
+      collection: 'Long Chains',
+      rating: 5.0
+    },
+    {
+      id: 14,
+      name: 'Classic Gold Temple Haram Set',
+      sku: 'LC-SV-003',
+      categoryId: 4,
+      description: 'Celebrate tradition with this Classic Gold Temple Haram Set. Featuring a beautifully detailed Lakshmi-inspired pendant, intricate gold craftsmanship, and matching earrings, this elegant set is perfect for bridal wear, religious ceremonies, weddings, and festive occasions.',
+      price: 2750.00,
+      discount: 0.00,
+      weight: 65.000,
+      purity: 'Antique Gold Finish',
+      stoneDetails: 'Lakshmi-inspired Pendant',
+      makingCharges: 0.00,
+      gst: 3.00,
+      stock: 10,
+      images: ['/assets/gold-temple-haram.jpg'],
+      videoUrl: '',
+      isFeatured: true,
+      isNewArrival: true,
+      isBestSeller: true,
+      isTrending: true,
+      collection: 'Long Chains',
+      rating: 4.9
+    },
+    {
+      id: 15,
+      name: 'Elegant Gold Pendant Necklace Set',
+      sku: 'LC-SV-004',
+      categoryId: 4,
+      description: 'Add timeless beauty to your jewelry collection with this Elegant Gold Pendant Necklace Set. Designed with dual-layer gold chains, a beautifully crafted pendant, and matching earrings, this premium set is perfect for weddings, festivals, traditional events, and family celebrations.',
+      price: 3580.00,
+      discount: 0.00,
+      weight: 55.000,
+      purity: 'Premium Gold Polish',
+      stoneDetails: 'Intricate Gold Work',
+      makingCharges: 0.00,
+      gst: 3.00,
+      stock: 12,
+      images: ['/assets/gold-pendant-necklace.jpg'],
+      videoUrl: '',
+      isFeatured: true,
+      isNewArrival: true,
+      isBestSeller: true,
+      isTrending: true,
+      collection: 'Long Chains',
+      rating: 4.8
+    },
+    {
+      id: 16,
+      name: 'Royal Heritage Gold Long Necklace Set',
+      sku: 'LC-SV-005',
+      categoryId: 4,
+      description: 'Experience royal elegance with this Royal Heritage Gold Long Necklace Set. Crafted with intricate traditional patterns, colorful stone embellishments, and matching statement earrings, this luxurious jewelry set is perfect for bridal wear, weddings, receptions, festivals, and other grand occasions. Its classic craftsmanship offers a rich and sophisticated look.',
+      price: 3850.00,
+      discount: 0.00,
+      weight: 70.000,
+      purity: 'Luxurious Heritage Gold',
+      stoneDetails: 'Colorful Stone Embellishments',
+      makingCharges: 0.00,
+      gst: 3.00,
+      stock: 6,
+      images: ['/assets/royal-heritage-necklace.jpg'],
+      videoUrl: '',
+      isFeatured: true,
+      isNewArrival: true,
+      isBestSeller: true,
+      isTrending: true,
+      collection: 'Long Chains',
+      rating: 4.9
     }
   ],
   coupons: [
@@ -400,11 +630,64 @@ const handleMockFallback = (endpoint, options = {}) => {
     return { success: true, message: 'Product deleted' };
   }
   if (endpoint.startsWith('/products')) {
+    let products = getMockItem('mock_products') || [];
+    
+    // Parse query parameters
+    const queryIndex = endpoint.indexOf('?');
+    if (queryIndex !== -1) {
+      const queryString = endpoint.slice(queryIndex + 1);
+      const params = new URLSearchParams(queryString);
+      
+      const category = params.get('category');
+      const search = params.get('search');
+      const sort = params.get('sort');
+      const minPrice = params.get('minPrice');
+      const maxPrice = params.get('maxPrice');
+      
+      // 1. Filter by category
+      if (category) {
+        const categories = getMockItem('mock_categories') || [];
+        const matchedCat = categories.find(c => c.slug === category);
+        if (matchedCat) {
+          products = products.filter(p => p.categoryId === matchedCat.id);
+        }
+      }
+      
+      // 2. Filter by search query
+      if (search) {
+        const query = search.toLowerCase();
+        products = products.filter(p => 
+          p.name.toLowerCase().includes(query) || 
+          p.description.toLowerCase().includes(query) ||
+          (p.sku && p.sku.toLowerCase().includes(query))
+        );
+      }
+      
+      // 3. Filter by price range
+      if (minPrice) {
+        products = products.filter(p => p.price >= parseFloat(minPrice));
+      }
+      if (maxPrice) {
+        products = products.filter(p => p.price <= parseFloat(maxPrice));
+      }
+      
+      // 4. Sort products
+      if (sort) {
+        if (sort === 'price-low') {
+          products.sort((a, b) => a.price - b.price);
+        } else if (sort === 'price-high') {
+          products.sort((a, b) => b.price - a.price);
+        } else if (sort === 'popular') {
+          products.sort((a, b) => b.rating - a.rating);
+        }
+      }
+    }
+    
     return {
       success: true,
       data: {
-        products: getMockItem('mock_products'),
-        total: getMockItem('mock_products').length,
+        products: products,
+        total: products.length,
         page: 1,
         pages: 1
       }
