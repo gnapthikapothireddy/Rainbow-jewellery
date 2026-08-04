@@ -38,7 +38,7 @@ export default function Home() {
     <div className="space-y-16 pb-16">
       
       {/* 1. Luxury Hero Banner */}
-      <section className="relative h-[70vh] md:h-[85vh] flex items-center bg-cover bg-center overflow-hidden border-b border-gold/15" style={{ backgroundImage: `url('/assets/royal-ruby-necklace.jpg')` }}>
+      <section className="relative h-[70vh] md:h-[85vh] flex items-center bg-cover bg-center overflow-hidden border-b border-gold/15" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&q=80&w=1600')` }}>
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent"></div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -259,10 +259,10 @@ export default function Home() {
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
-            '/assets/royal-red-bangles.jpg',
-            '/assets/royal-green-necklace.jpg',
-            '/assets/royal-ruby-necklace.jpg',
-            '/assets/emerald-layered-necklace.jpg'
+            'https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&q=80&w=400',
+            'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&q=80&w=400',
+            'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&q=80&w=400',
+            'https://images.unsplash.com/photo-1635767798638-3e25273a8236?auto=format&fit=crop&q=80&w=400'
           ].map((url, idx) => (
             <div key={idx} className="relative rounded-2xl overflow-hidden h-64 border border-gray-800 group">
               <img src={url} alt="Instagram lookbook" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />

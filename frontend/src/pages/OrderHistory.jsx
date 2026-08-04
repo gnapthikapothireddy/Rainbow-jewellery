@@ -143,7 +143,7 @@ export default function OrderHistory() {
                   <div key={item.id} className="flex items-center justify-between text-xs">
                     <div className="flex items-center gap-3">
                       <img 
-                        src={item.Product ? item.Product.images[0] : '/assets/royal-red-bangles.jpg'} 
+                        src={item.Product ? item.Product.images[0] : 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&q=80&w=400'} 
                         alt="Product item" 
                         className="w-10 h-10 object-cover rounded-md border border-gray-850" 
                       />
