@@ -73,18 +73,18 @@ const getHeaders = () => {
 const mockData = {
   categories: [
     { id: 1, name: 'Bangles', slug: 'bangles', image: '/assets/royal-red-bangles.jpg' },
-    { id: 2, name: 'Gold Plated Bangles', slug: 'gold-plated-bangles', image: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&q=80&w=400' },
+    { id: 2, name: 'Gold Plated Bangles', slug: 'gold-plated-bangles', image: '/assets/silver-bangles.jpg' },
     { id: 3, name: 'Necklaces', slug: 'necklaces', image: '/assets/royal-ruby-necklace.jpg' },
     { id: 4, name: 'Long Chains', slug: 'long-chains', image: '/assets/emerald-layered-necklace.jpg' },
-    { id: 5, name: 'Pearl Chains', slug: 'pearl-chains', image: 'https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&q=80&w=400' },
-    { id: 6, name: 'Black Bead Chains', slug: 'black-bead-chains', image: 'https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&q=80&w=400' },
+    { id: 5, name: 'Pearl Chains', slug: 'pearl-chains', image: '/assets/classic-pearl-necklace.jpg' },
+    { id: 6, name: 'Black Bead Chains', slug: 'black-bead-chains', image: '/assets/royal-green-long-necklace.jpg' },
     { id: 7, name: 'Chokers', slug: 'chokers', image: '/assets/royal-green-necklace.jpg' },
-    { id: 8, name: 'Rings', slug: 'rings', image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&q=80&w=400' },
-    { id: 9, name: 'Earrings', slug: 'earrings', image: 'https://images.unsplash.com/photo-1635767798638-3e25273a8236?auto=format&fit=crop&q=80&w=400' },
-    { id: 10, name: 'Ear Side Chains', slug: 'ear-side-chains', image: 'https://images.unsplash.com/photo-1635767798638-3e25273a8236?auto=format&fit=crop&q=80&w=400' },
-    { id: 11, name: 'Pendants', slug: 'pendants', image: 'https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&q=80&w=400' },
-    { id: 12, name: 'Hair Ornaments', slug: 'hair-ornaments', image: 'https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&q=80&w=400' },
-    { id: 13, name: 'Bracelets', slug: 'bracelets', image: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&q=80&w=400' }
+    { id: 8, name: 'Rings', slug: 'rings', image: '/assets/royal-red-bangles.jpg' },
+    { id: 9, name: 'Earrings', slug: 'earrings', image: '/assets/royal-ruby-necklace.jpg' },
+    { id: 10, name: 'Ear Side Chains', slug: 'ear-side-chains', image: '/assets/royal-ruby-necklace.jpg' },
+    { id: 11, name: 'Pendants', slug: 'pendants', image: '/assets/royal-green-necklace.jpg' },
+    { id: 12, name: 'Hair Ornaments', slug: 'hair-ornaments', image: '/assets/emerald-layered-necklace.jpg' },
+    { id: 13, name: 'Bracelets', slug: 'bracelets', image: '/assets/silver-bangles.jpg' }
   ],
   products: [
     {
@@ -243,6 +243,22 @@ const mockData = {
 
 // Initialize local storage copy for simulation persistence
 const initMockDB = () => {
+  // Proactively reset localStorage if it contains old unsplash image references
+  const existingProducts = localStorage.getItem('mock_products');
+  const existingCategories = localStorage.getItem('mock_categories');
+  const containsUnsplash = (existingProducts && existingProducts.includes('unsplash.com')) || 
+                           (existingCategories && existingCategories.includes('unsplash.com'));
+                           
+  if (containsUnsplash) {
+    localStorage.removeItem('mock_products');
+    localStorage.removeItem('mock_categories');
+    localStorage.removeItem('mock_orders');
+    localStorage.removeItem('mock_appointments');
+    localStorage.removeItem('mock_notifications');
+    localStorage.removeItem('mock_addresses');
+    localStorage.removeItem('mock_coupons');
+  }
+
   if (!localStorage.getItem('mock_products')) {
     localStorage.setItem('mock_products', JSON.stringify(mockData.products));
   }
@@ -377,7 +393,7 @@ const handleMockFallback = (endpoint, options = {}) => {
   }
   if (endpoint === '/products' && method === 'POST') {
     const products = getMockItem('mock_products');
-    const newProd = { id: Date.now(), ...body, images: body.images || ['https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&q=80&w=400'] };
+    const newProd = { id: Date.now(), ...body, images: body.images || ['/assets/royal-red-bangles.jpg'] };
     products.push(newProd);
     setMockItem('mock_products', products);
     return { success: true, data: newProd };

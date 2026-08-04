@@ -25,7 +25,7 @@ export default function AdminDashboard({ activeTab }) {
   const [newProd, setNewProd] = useState({
     name: '', sku: '', categoryId: 1, description: '', price: '', discount: 0,
     weight: '', purity: '22K Gold', stoneDetails: '', makingCharges: 0, stock: 10,
-    images: ['https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&q=80&w=400'], videoUrl: ''
+    images: ['/assets/royal-red-bangles.jpg'], videoUrl: ''
   });
 
   // Coupons Tab states
@@ -88,7 +88,7 @@ export default function AdminDashboard({ activeTab }) {
         setNewProd({
           name: '', sku: '', categoryId: 1, description: '', price: '', discount: 0,
           weight: '', purity: '22K Gold', stoneDetails: '', makingCharges: 0, stock: 10,
-          images: ['https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&q=80&w=400'], videoUrl: ''
+          images: ['/assets/royal-red-bangles.jpg'], videoUrl: ''
         });
         loadDashboardData();
       }
